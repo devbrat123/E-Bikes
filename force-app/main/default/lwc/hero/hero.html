@@ -12,4 +12,11 @@
     >
         <span slot="button">{buttonText}</span>
     </c-hero-details>
+    <lightning-layout>
+        <lightning-layout-item>
+             <template for:each={myArray} for:item="repo">
+                <p key={repo.Id}>{repo.Name}</p>
+             </template>
+</lightning-layout-item>
+</lightning-layout>
 </template>

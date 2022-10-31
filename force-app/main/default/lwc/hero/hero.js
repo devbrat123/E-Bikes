@@ -18,6 +18,9 @@ export default class Hero extends LightningElement {
     @api overlay;
     @api opacity;
     @api buttonClickProductOrFamilyName;
+    connectedCallback() {
+        this.getdata();
+    }
 
     get resUrl() {
         if (this.isImg) {
@@ -57,5 +60,18 @@ export default class Hero extends LightningElement {
         if (overlay) {
             overlay.style.opacity = parseInt(this.opacity, 10) / 10;
         }
+
+    }
+
+    myArray = [];
+
+
+    getdata() {
+        myObject = {
+            "Name": "Devbrat Chauhan",
+            "Age": 24,
+            "profession": "Software Engineer"
+        };
+        this.myArray.push(myObject);
     }
 }
